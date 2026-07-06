@@ -15,7 +15,6 @@ body{
     color:white;
 }
 
-/* 🌌 ESTRELLAS */
 canvas{
     position:fixed;
     top:0;
@@ -23,7 +22,6 @@ canvas{
     z-index:-1;
 }
 
-/* TITULO */
 h1{
     text-align:center;
     color:gold;
@@ -36,7 +34,6 @@ h1{
     to{opacity:1;}
 }
 
-/* BOTÓN */
 button{
     padding:15px 30px;
     border:none;
@@ -46,7 +43,6 @@ button{
     cursor:pointer;
 }
 
-/* 🎧 BOTÓN MÚSICA */
 .audio-btn{
     position:fixed;
     bottom:20px;
@@ -57,7 +53,6 @@ button{
     cursor:pointer;
 }
 
-/* 🦋 MARIPOSA FOLLOW */
 .butterfly{
     position:fixed;
     width:60px;
@@ -65,7 +60,6 @@ button{
     transition: all 0.2s linear;
 }
 
-/* 💌 CARTAS */
 .card{
     margin:80px auto;
     width:90%;
@@ -107,7 +101,6 @@ img{
     border-radius:15px;
 }
 
-/* 💖 CORAZONES */
 .heart{
     position:fixed;
     animation: float 6s linear infinite;
@@ -145,7 +138,7 @@ img{
 <div class="front">💌 Tócame</div>
 <div class="back">
 <p>Desde que llegaste a mi vida, todo cambió 💜</p>
-<img src="foto1.png">
+<img src="imagen1.jpg">
 </div>
 </div>
 </div>
@@ -156,7 +149,7 @@ img{
 <div class="front">💌 Ábreme</div>
 <div class="back">
 <p>Contigo todo es especial ✨</p>
-<img src="foto2.png">
+<img src="imagen2.jpg">
 </div>
 </div>
 </div>
@@ -167,37 +160,32 @@ img{
 <div class="front">💌 Última carta</div>
 <div class="back">
 <p>Te amo infinitamente 💖</p>
-<img src="foto3.png">
+<img src="imagen3.jpg">
 </div>
 </div>
 </div>
 
 <script>
 
-/* 🎶 */
 function start(){
 document.getElementById("music").play();
 }
 
-/* 🎧 */
 function toggleMusic(){
 let m=document.getElementById("music");
 m.paused?m.play():m.pause();
 }
 
-/* 💌 ABRIR CARTA */
 function openCard(el){
 el.classList.toggle("open");
 }
 
-/* 🦋 MARIPOSA FOLLOW */
 document.addEventListener("mousemove", e=>{
 let b=document.getElementById("butterfly");
 b.style.top = e.clientY+"px";
 b.style.left = e.clientX+"px";
 });
 
-/* 💖 CORAZONES */
 setInterval(()=>{
 let h=document.createElement("div");
 h.className="heart";
@@ -208,13 +196,12 @@ document.body.appendChild(h);
 setTimeout(()=>h.remove(),6000);
 },500);
 
-/* 🌌 ESTRELLAS */
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let stars = Array(100).fill().map(()=>({
+let stars = Array(100).fill().map(() => ({
 x: Math.random()*canvas.width,
 y: Math.random()*canvas.height,
 r: Math.random()*2
